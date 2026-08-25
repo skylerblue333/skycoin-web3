@@ -20,5 +20,7 @@ assert.equal(credentialIsCurrent(input, "2027-01-01T00:00:00.000Z"), false);
 assert.throws(() => normalizeCredential({ ...input, id: "bad id" }), /bounded identifier/);
 assert.throws(() => normalizeCredential({ ...input, expiresAt: input.issuedAt }), /after issuedAt/);
 assert.throws(() => normalizeCredential({ ...input, claims: { score: Infinity } }), /finite/);
+assert.throws(() => normalizeCredential({ ...input, claims: { note: "x".repeat(4097) } }), /4096/);
+assert.throws(() => normalizeCredential({ ...input, claims: { "bad claim": true } }), /claim key/);
 
 console.log("SkyCredentialsWeb3 contract tests passed");
