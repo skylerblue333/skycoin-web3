@@ -6,10 +6,11 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
+    "declaration": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "**/*.ts"],
+  "include": ["src/credentials.ts"],
   "exclude": ["node_modules", "dist"]
 }
