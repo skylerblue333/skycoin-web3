@@ -43,9 +43,10 @@ export function normalizeCredential(input: CredentialMetadata): CredentialSnapsh
   if (entries.length > MAX_CLAIMS) throw new RangeError(`credential.claims may contain at most ${MAX_CLAIMS} entries`);
   const claims: Record<string, string | number | boolean> = {};
   for (const [key, value] of entries.sort(([a], [b]) => a.localeCompare(b))) {
-    if (!TYPE.test(key)) throw new TypeError(`credential claim key ${key!r} is invalid`);
-    if (!(typeof value === "string" || typeof value === "number" || typeof value === "boolean")) throw new TypeError(`credential claim ${key!r} has unsupported value`);
-    if (typeof value === "number" && !Number.isFinite(value)) throw new TypeError(`credential claim ${key!r} must be finite`);
+    if (!TYPE.test(key)) throw new TypeError(`credential claim key ${JSON.stringify(key)} is invalid`);
+    if (!(typeof value === "string" || typeof value === "number" || typeof value === "boolean")) throw new TypeError(`credential claim ${JSON.stringify(key)} has unsupported value`);
+    if (typeof value === "number" && !Number.isFinite(value)) throw new TypeError(`credential claim ${JSON.stringify(key)} must be finite`);
+    if (typeof value === "string" && value.length > 4096) throw new TypeError(`credential claim ${JSON.stringify(key)} exceeds 4096 characters`);
     claims[key] = value;
   }
   return {
