@@ -1,44 +1,47 @@
-<!-- PORTFOLIO PROJECT PROFILE: maintained by the repository owner -->
-
-## Project profile and code-audit snapshot
-
-**What this is:** **skycoin-web3** is a public repository described as: “Web3 and blockchain integration #SkyCoin4444 #AI #Blockchain #DevOps #Innovation” Its dominant language signals are **TypeScript (8 files)**.
-
-**Why it has value:** Its value is best understood through the implementation evidence currently present in the repository: **27 tracked files** were observed in the shallow audit, with the source structure and existing documentation providing the project’s specific context. This README does not treat a prototype, experiment, or archive as a production system without supporting evidence.
-
-**Implementation evidence:** No test-related file was detected by filename heuristics.; 1 dependency or package manifest(s) detected; 3 build/CI/infrastructure signal(s) detected; and 3 documentation or governance file(s) detected. Test filenames observed include none detected. Dependency or package files include `package.json`. Build, CI, or infrastructure signals include `Dockerfile`, `docker-compose.yml`, `.github/workflows/ci.yml`.
-
-**Current status:** The repository is tracked on the `main` branch. The existing source tree, configuration, tests, workflows, and documentation remain authoritative for supported behavior and maturity. A code audit is not a production-readiness certification, and the presence of a test or workflow file does not establish that all checks pass.
-
-**Relationship to the wider portfolio:** This repository is one focused component of the broader Skyler Blue Spillers portfolio across AI, software engineering, cloud and DevOps, cybersecurity, blockchain, finance, education, social systems, and creative work. It may provide a service boundary, implementation pattern, experiment, archive, or reusable idea for related repositories. Treat repositories as technical dependencies only where documented interfaces and verified project requirements support that relationship.
-
-**Quality and security note:** No obvious secret-like pattern was detected by the limited static scan; this is not a substitute for a security audit. No TODO/FIXME marker was detected in the scanned text files.
-
----
-
 # Skycoin Web3
 
-![GitHub stars](https://img.shields.io/github/stars/skylerblue333/skycoin-web3?style=flat-square)
-![GitHub license](https://img.shields.io/github/license/skylerblue333/skycoin-web3?style=flat-square)
+`skycoin-web3` is a TypeScript repository for Web3 integration and credential-related components in the broader Skycoin portfolio.
 
-## 🌟 Overview
-**skycoin-web3** is a professional-grade project within the **SkyCoin4444** ecosystem. It focuses on delivering high-value solutions in the domain of **TypeScript**.
+## Status
 
-## 🚀 Key Features
-- **Scalable Architecture**: Designed for enterprise-level growth and performance.
-- **Modern Standards**: Implements best practices for clean code and maintainability.
-- **Robust Integration**: Built to work seamlessly within modern cloud-native environments.
+**Experimental.** The repository is not presented as a production wallet, exchange, custody service, audited smart-contract system, investment product, or guarantee of token value. Read the source, tests, and CI workflow before relying on any behavior.
 
-## 🛠️ Technology Stack
-- **Primary Domain**: TypeScript
-- **Ecosystem**: SkyCoin4444 Digital Platform
+## Scope
 
-## 📂 Structure
-The project is organized into a modular structure to ensure clarity and ease of development.
+The repository currently contains TypeScript source code, Docker and Compose configuration, security configuration, and a credential-focused document. Its exact supported interfaces are defined by the current source tree and package scripts.
 
-## 👨‍💻 Author
-**Skyler Blue Spillers**
-*Professional Chess Player & Software Engineer*
+## Development
 
----
-*Powered by SkyCoin4444*
+Requirements:
+
+- Node.js 20 or newer
+- npm
+
+Install dependencies and run the available checks:
+
+```bash
+npm install
+npm run typecheck
+npm test
+npm run audit
+```
+
+The `audit` command runs a production-dependency audit at the configured high-severity threshold. Network access may be required for dependency installation and auditing.
+
+## Security boundaries
+
+Do not commit private keys, seed phrases, API tokens, production credentials, or real user data. Use test credentials and isolated development networks only. This repository does not by itself establish secure custody, transaction finality, smart-contract correctness, regulatory approval, or production readiness.
+
+Report suspected vulnerabilities privately according to [`SECURITY.md`](SECURITY.md). Security-sensitive changes should include focused tests and explain their failure behavior.
+
+## Relationship to the portfolio
+
+This repository is separate from the main [`skycoin4444`](https://github.com/skylerblue333/skycoin4444) application and from the provider-neutral [`skycoin-ai`](https://github.com/skylerblue333/skycoin-ai) routing-policy library. Do not assume runtime integration between repositories unless a documented contract and passing verification establish it.
+
+## Responsible project use
+
+The project supports transparent engineering and legitimate software development. It does not provide price predictions, investment advice, coordinated market-promotion instructions, or guarantees of financial outcomes.
+
+## License
+
+See [`LICENSE`](LICENSE).
